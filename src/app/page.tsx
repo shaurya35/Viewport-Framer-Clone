@@ -1,5 +1,4 @@
-"use client";  // Ensures client-side rendering
-
+"use client";  
 import React, { useState, useEffect } from 'react';
 import { DragDropContext, DropResult } from 'react-beautiful-dnd';
 import Sidebar from '@/components/Sidebar';

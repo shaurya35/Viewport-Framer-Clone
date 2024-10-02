@@ -1,7 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { KonvaEventObject } from "konva/lib/Node";
-import Konva from "konva";
 
 // @ts-ignore
 import { Stage, Layer, Rect, Line } from "react-konva";
@@ -16,8 +15,10 @@ export default function Canvas() {
     x: 10,
     y: 10,
   });
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const mainRef = useRef<HTMLDivElement | null>(null);
 
-  const gridSize = 10;
+  const gridSize = 50;
 
   const drawGrid = (width: number, height: number) => {
     const lines = [];
@@ -58,27 +59,47 @@ export default function Canvas() {
     });
   };
 
+  useEffect(() => {
+    const updateDimensions = () => {
+      if (mainRef.current) {
+        setDimensions({
+          width: mainRef.current.offsetWidth,
+          height: window.innerHeight,
+        });
+      }
+    };
+
+    updateDimensions();
+    window.addEventListener("resize", updateDimensions);
+
+    return () => {
+      window.removeEventListener("resize", updateDimensions);
+    };
+  }, []);
+
   return (
     <>
-      <main className="">
-        <Stage
-          onDragEnd={handleChangeShapePosition}
-          width={window.innerWidth}
-          height={window.innerHeight}
-          className="bg-white"
-        >
-          <Layer>
-            {drawGrid(window.innerWidth, window.innerHeight)}
+      <main ref={mainRef} className="w-4/5">
+        {dimensions.width > 0 && (
+          <Stage
+            onDragEnd={handleChangeShapePosition}
+            width={window.innerWidth}
+            height={window.innerHeight}
+            className="bg-white"
+          >
+            <Layer>
+              {drawGrid(window.innerWidth, window.innerHeight)}
 
-            <Rect
-              {...coordinates}
-              draggable
-              width={150}
-              height={50}
-              fill="red"
-            />
-          </Layer>
-        </Stage>
+              <Rect
+                {...coordinates}
+                draggable
+                width={150}
+                height={50}
+                fill="red"
+              />
+            </Layer>
+          </Stage>
+        )}
       </main>
     </>
   );

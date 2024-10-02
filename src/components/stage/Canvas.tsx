@@ -1,8 +1,10 @@
 "use client";
 import { useState } from "react";
 import { KonvaEventObject } from "konva/lib/Node";
-import { Stage, Layer, Rect, Line } from 'react-konva';
-import Konva from 'konva';
+import Konva from "konva";
+
+// @ts-ignore
+import { Stage, Layer, Rect, Line } from "react-konva";
 
 type TDimension2D = {
   x: number;
@@ -15,14 +17,11 @@ export default function Canvas() {
     y: 10,
   });
 
-  // Recommended grid size for web components
-  const gridSize = 10;  // Can also try 8px depending on preference
+  const gridSize = 10;
 
-  // Function to generate grid lines
   const drawGrid = (width: number, height: number) => {
     const lines = [];
-    
-    // Vertical grid lines
+
     for (let i = 0; i < width / gridSize; i++) {
       lines.push(
         <Line
@@ -33,8 +32,7 @@ export default function Canvas() {
         />
       );
     }
-    
-    // Horizontal grid lines
+
     for (let j = 0; j < height / gridSize; j++) {
       lines.push(
         <Line
@@ -49,12 +47,10 @@ export default function Canvas() {
     return lines;
   };
 
-  // Snap the shape to the grid
   const snapToGrid = (value: number) => {
     return Math.round(value / gridSize) * gridSize;
   };
 
-  // Handle drag end event and snap the component to grid
   const handleChangeShapePosition = (e: KonvaEventObject<MouseEvent>) => {
     setCoordinates({
       x: snapToGrid(e.target.x()),
@@ -72,15 +68,13 @@ export default function Canvas() {
           className="bg-white"
         >
           <Layer>
-            {/* Render the grid */}
             {drawGrid(window.innerWidth, window.innerHeight)}
 
-            {/* Example component: a draggable rectangle */}
             <Rect
               {...coordinates}
               draggable
-              width={150}  // Example web component width
-              height={50}  // Example web component height
+              width={150}
+              height={50}
               fill="red"
             />
           </Layer>

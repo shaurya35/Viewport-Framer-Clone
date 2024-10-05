@@ -66,7 +66,7 @@ export default function Canvas() {
       if (mainRef.current) {
         setDimensions({
           width: mainRef.current.offsetWidth,
-          height: window.innerHeight,
+          height: mainRef.current.offsetWidth,
         });
       }
     };
@@ -81,12 +81,14 @@ export default function Canvas() {
 
   return (
     <>
-      <main ref={mainRef} className="">
+      <main ref={mainRef} className="w-full h-full ">
         {dimensions.width > 0 && (
           <Stage
             onDragEnd={handleChangeShapePosition}
-            width={100}
-            height={100}
+            width={dimensions.width}
+            height={dimensions.height}
+            // width={100}
+            // height={100}
             className="bg-white"
           >
             <Layer>
@@ -95,8 +97,8 @@ export default function Canvas() {
               <Rect
                 {...coordinates}
                 draggable
-                width={150}
-                height={50}
+                width={75}
+                height={25}
                 fill="#3B82F6"
                 stroke="#1E3A8A"
                 strokeWidth={2}

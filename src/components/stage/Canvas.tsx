@@ -11,8 +11,8 @@ type TDimension2D = {
 
 export default function Canvas() {
   const [coordinates, setCoordinates] = useState<TDimension2D>({
-    x: 10,
-    y: 10,
+    x: 20,
+    y: 20,
   });
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const mainRef = useRef<HTMLDivElement | null>(null);
@@ -78,31 +78,50 @@ export default function Canvas() {
     };
   }, []);
 
+  const stageWidth = 1118;
+  const stageHeight = 500;
+
   return (
     <>
-      <main ref={mainRef} className="w-full h-full ">
+      <main ref={mainRef} className="">
         {dimensions.width > 0 && (
           <Stage
-            onDragEnd={handleChangeShapePosition}
-            width={dimensions.width}
-            height={dimensions.height}
-            // width={100}
-            // height={100}
-            className="bg-white"
+            draggable
+            // width={dimensions.width}
+            // height={dimensions.height}
+            // width={stageWidth}
+            // height={stageHeight}
+            width={window.innerWidth}
+            height={window.innerHeight}
+            style={{ width: "100vw", height: "100vh" }}
+            className="bg-gray-900"
           >
             <Layer>
-              {drawGrid(dimensions.width, dimensions.height)}
-
+              {drawGrid(window.innerWidth, window.innerHeight)}
               <Rect
                 {...coordinates}
                 draggable
+                x={0}
+                y={0}
+                width={stageWidth}
+                height={stageHeight}
+                fill="white"
+                strokeWidth={2}
+              />
+            </Layer>
+            {/* <Layer>
+              {drawGrid(dimensions.width, dimensions.height)}
+              <Rect
+                {...coordinates}
+                draggable
+                onDragEnd={handleChangeShapePosition}
                 width={75}
                 height={25}
                 fill="#3B82F6"
                 stroke="#1E3A8A"
                 strokeWidth={2}
               />
-            </Layer>
+            </Layer> */}
           </Stage>
         )}
       </main>

@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Viewport-Framer-Clone
 
-## Getting Started
+Viewport is a dynamic web development platform designed to simplify the design-to-code workflow. With its intuitive drag-and-drop interface, developers and designers can easily create, customize, and deploy responsive websites without needing to write code manually. Viewport aims to streamline collaboration, enhance productivity, and turn designs into production-ready code effortlessly.
 
-First, run the development server:
+## Table of Contents
+
+- [Overview](#Overview)
+- [Features](#features)
+- [Dependencies](#dependencies)
+- [Git Setup](#Git-Setup)
+- [Client Setup](#Client-Setup)
+- [Server Setup](#Server-Setup)
+- [Usage](#usage)
+- [Contributors](#contributors)
+
+## Overview
+
+- Viewport empowers developers and designers by providing a drag-and-drop interface that converts their designs into clean, production-ready code. Its versatile platform supports responsive design, code export, and real-time collaboration, enabling teams to build and deploy web applications faster than ever.
+
+## Features
+
+- Drag-and-Drop Interface: Intuitively design layouts with easy-to-use drag-and-drop functionality.
+- Code Export: Convert designs into clean, production-ready HTML, CSS, and JavaScript.
+- Responsive Design: Automatically adjust layouts for different devices and screen sizes.
+- Real-Time Collaboration: Work with team members in real-time to iterate and refine designs.
+- Component Library: Access reusable components to speed up your design process.
+- Custom Code Support: Easily add custom code snippets for unique functionality.
+
+## Dependencies
+
+- Konva.js
+- lucide-react
+
+## Git-Setup
+
+Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/user-name/Viewport-Framer-Clone
+cd Viewport-Framer-Clone
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+##  Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Install the dependencies:
+```bash
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Run client Interface:
+```bash
+pnpm dev
+```
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+Access the app in your web browser at `http://localhost:3000/`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributors
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Shaurya ([LinkedIn](https://www.linkedin.com/in/shaurya--jha/))
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

@@ -79,12 +79,12 @@ export default function Canvas() {
 
   return (
     <>
-      <main ref={mainRef} className="w-4/5">
+      <main ref={mainRef} className="w-8/12">
         {dimensions.width > 0 && (
           <Stage
             onDragEnd={handleChangeShapePosition}
-            width={window.innerWidth}
-            height={window.innerHeight}
+            width={500}
+            height={500}
             className="bg-white"
           >
             <Layer>

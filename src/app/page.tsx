@@ -1,17 +1,16 @@
-import Sidebar from '@/components/stage/Sidebar'
 
-import dynamic from 'next/dynamic';
-
-const Canvas = dynamic(() => import('@/components/stage/Canvas'), {
-  ssr: false,
-});
-
+// import dynamic from 'next/dynamic';
+// const Canvas = dynamic(() => import('@/components/stage/Canvas'), {
+  //   ssr: false,
+  // });
+  
+  import Stage from '@/components/Stage'
 export default function Home() {
   return (
     <>
-      <main className="flex">
-        <Sidebar/>
-        <Canvas/>
+      <main className="">
+        <Stage/>
+        {/* <Canvas/> */}
       </main>
     </>
   );

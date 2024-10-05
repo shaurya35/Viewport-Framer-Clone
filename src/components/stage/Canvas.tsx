@@ -28,7 +28,7 @@ export default function Canvas() {
         <Line
           key={`v-${i}`}
           points={[i * gridSize, 0, i * gridSize, height]}
-          stroke="lightgrey"
+          stroke="#374151" 
           strokeWidth={0.5}
         />
       );
@@ -39,7 +39,7 @@ export default function Canvas() {
         <Line
           key={`h-${j}`}
           points={[0, j * gridSize, width, j * gridSize]}
-          stroke="lightgrey"
+          stroke="#374151" 
           strokeWidth={0.5}
         />
       );
@@ -79,23 +79,25 @@ export default function Canvas() {
 
   return (
     <>
-      <main ref={mainRef} className="w-8/12">
+      <main ref={mainRef} className="w-full h-full">
         {dimensions.width > 0 && (
           <Stage
             onDragEnd={handleChangeShapePosition}
-            width={500}
-            height={500}
-            className="bg-white"
+            width={dimensions.width}
+            height={dimensions.height}
+            className="bg-gray-800" 
           >
             <Layer>
-              {drawGrid(window.innerWidth, window.innerHeight)}
+              {drawGrid(dimensions.width, dimensions.height)}
 
               <Rect
                 {...coordinates}
                 draggable
                 width={150}
                 height={50}
-                fill="red"
+                fill="#3B82F6" 
+                stroke="#1E3A8A"
+                strokeWidth={2}
               />
             </Layer>
           </Stage>

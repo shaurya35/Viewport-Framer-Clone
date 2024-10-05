@@ -141,11 +141,11 @@ export default function LandingPageComponent() {
           </div>
           <div className="mt-12 pt-8 border-t border-gray-700 flex flex-col sm:flex-row justify-between items-center">
             <div className="flex space-x-6 mb-4 sm:mb-0">
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://github.com/shaurya35/Viewport-Framer-Clone" target="_blank" className="text-gray-400 hover:text-white">
                 <Github className="h-6 w-6" />
                 <span className="sr-only">GitHub</span>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://x.com/_shaurya35" target="_blank" className="text-gray-400 hover:text-white">
                 <Code className="h-6 w-6" />
                 <span className="sr-only">Developer API</span>
               </a>

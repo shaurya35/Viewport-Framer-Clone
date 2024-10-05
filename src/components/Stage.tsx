@@ -4,6 +4,11 @@ import { Slider } from "@/components/ui/slider"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ChevronDown, Layers, Square, Type, Users } from "lucide-react"
 
+import dynamic from 'next/dynamic';
+const Canvas = dynamic(() => import('@/components/stage/Canvas'), {
+    ssr: false,
+  });
+
 export default function Stage() {
   return (
     <div className="flex flex-col h-screen bg-gray-900 text-gray-100">
@@ -63,6 +68,7 @@ export default function Stage() {
         <main className="flex-1 overflow-auto bg-gray-900 p-4">
           <div className="bg-gray-800 border border-gray-700 rounded-lg shadow-lg h-full">
             {/* Canvas content would go here */}
+            <Canvas/>
           </div>
         </main>
 

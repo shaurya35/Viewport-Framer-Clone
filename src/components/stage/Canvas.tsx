@@ -17,7 +17,7 @@ export default function Canvas() {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const mainRef = useRef<HTMLDivElement | null>(null);
 
-  const gridSize = 50;
+  const gridSize = 90;
 
   const drawGrid = (width: number, height: number) => {
     const lines = [];
@@ -27,7 +27,7 @@ export default function Canvas() {
         <Line
           key={`v-${i}`}
           points={[i * gridSize, 0, i * gridSize, height]}
-          // stroke="#374151"
+          stroke="#374151"
           // stroke="white"
           strokeWidth={0.5}
         />
@@ -39,7 +39,7 @@ export default function Canvas() {
         <Line
           key={`h-${j}`}
           points={[0, j * gridSize, width, j * gridSize]}
-          // stroke="#374151"
+          stroke="#374151"
           // stroke="white"
           strokeWidth={0.5}
         />
@@ -53,12 +53,12 @@ export default function Canvas() {
     return Math.round(value / gridSize) * gridSize;
   };
 
-  // const handleChangeShapePosition = (e: KonvaEventObject<MouseEvent>) => {
-  //   setCoordinates({
-  //     x: snapToGrid(e.target.x()),
-  //     y: snapToGrid(e.target.y()),
-  //   });
-  // };
+  const handleChangeShapePosition = (e: KonvaEventObject<MouseEvent>) => {
+    setCoordinates({
+      x: snapToGrid(e.target.x()),
+      y: snapToGrid(e.target.y()),
+    });
+  };
 
   useEffect(() => {
     const updateDimensions = () => {
@@ -78,15 +78,19 @@ export default function Canvas() {
     };
   }, []);
 
-  const stageWidth = 1118;
-  const stageHeight = 500;
+  const stageWidth = 1200;
+  const stageHeight = 600;
+
+  const handleMouseDown = (e: KonvaEventObject<MouseEvent>) => {};
+
+  const handleMouseUp = (e: KonvaEventObject<MouseEvent>) => {};
 
   return (
     <>
       <main ref={mainRef} className="">
         {dimensions.width > 0 && (
           <Stage
-            draggable
+            // draggable
             // width={dimensions.width}
             // height={dimensions.height}
             // width={stageWidth}
@@ -101,15 +105,15 @@ export default function Canvas() {
               <Rect
                 {...coordinates}
                 draggable
-                x={0}
-                y={0}
+                x={10}
+                y={10}
                 width={stageWidth}
                 height={stageHeight}
                 fill="white"
                 strokeWidth={2}
               />
             </Layer>
-            {/* <Layer>
+            <Layer>
               {drawGrid(dimensions.width, dimensions.height)}
               <Rect
                 {...coordinates}
@@ -121,7 +125,7 @@ export default function Canvas() {
                 stroke="#1E3A8A"
                 strokeWidth={2}
               />
-            </Layer> */}
+            </Layer>
           </Stage>
         )}
       </main>

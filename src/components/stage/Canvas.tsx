@@ -2,7 +2,6 @@
 import { useState, useEffect, useRef } from "react";
 import { KonvaEventObject } from "konva/lib/Node";
 
-// @ts-expect-error react-konva types are not fully compatible
 import { Stage, Layer, Rect, Line } from "react-konva";
 
 type TDimension2D = {

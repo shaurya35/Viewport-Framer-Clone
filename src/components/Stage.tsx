@@ -131,11 +131,11 @@ export default function Stage() {
         </aside>
 
         {/* Canvas */}
-        <main className="flex-1 overflow-auto bg-gray-900 p-4 pt-20">
-          <div className="bg-gray-800 border border-gray-700 rounded-lg shadow-lg h-[300] w-[50rem] mx-auto">
+        <main className="flex-1 overflow-hidden bg-gray-900">
+          {/* <div className="bg-gray-800 border border-gray-700 rounded-lg shadow-lg h-[30rem] w-[70rem] mx-auto"> */}
             {/* Canvas content would go here */}
             <Canvas />
-          </div>
+          {/* </div> */}
         </main>
 
         {/* Right sidebar */}

@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { KonvaEventObject } from "konva/lib/Node";
 
 import { Stage, Layer, Rect, Line } from "react-konva";
+import { inherits } from "util";
 
 type TDimension2D = {
   x: number;
@@ -80,14 +81,14 @@ export default function Canvas() {
 
   return (
     <>
-      <main ref={mainRef} className="w-full h-full ">
+      <main ref={mainRef} className="">
         {dimensions.width > 0 && (
           <Stage
             onDragEnd={handleChangeShapePosition}
-            width={dimensions.width}
-            height={dimensions.height}
-            // width={100}
-            // height={100}
+            // width={dimensions.width}
+            // height={dimensions.height}
+            width={400}
+            height={300}
             className="bg-white"
           >
             <Layer>

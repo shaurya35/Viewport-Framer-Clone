@@ -105,8 +105,8 @@ export default function Canvas() {
               <Rect
                 {...coordinates}
                 draggable
-                x={10}
-                y={10}
+                x={100}
+                y={200}
                 width={stageWidth}
                 height={stageHeight}
                 fill="white"

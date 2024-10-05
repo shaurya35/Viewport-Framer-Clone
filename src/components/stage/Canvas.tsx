@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { KonvaEventObject } from "konva/lib/Node";
 
-// @ts-ignore
+// @ts-expect-error
 import { Stage, Layer, Rect, Line } from "react-konva";
 
 type TDimension2D = {

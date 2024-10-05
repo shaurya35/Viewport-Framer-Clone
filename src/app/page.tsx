@@ -3,8 +3,11 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Square, Layers, Type, Users, Code, Github } from "lucide-react"
+import { useRouter } from 'next/navigation'
 
 export default function LandingPageComponent() {
+  const router = useRouter()
+
   return (
     <div className="flex flex-col min-h-screen bg-gray-900 text-gray-100">
       <header className="sticky top-0 z-40 w-full border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60">
@@ -36,7 +39,7 @@ export default function LandingPageComponent() {
                 </p>
               </div>
               <div className="space-x-4">
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white">Get Started</Button>
+                <Button onClick={() => router.push('/dashboard')} className="bg-blue-600 hover:bg-blue-700 text-white">Get Started</Button>
                 <Button variant="outline" className="border-gray-700 text-gray-300 hover:bg-gray-800">Learn More</Button>
               </div>
             </div>

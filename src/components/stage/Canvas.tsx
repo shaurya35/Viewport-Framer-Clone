@@ -27,7 +27,7 @@ export default function Canvas() {
         <Line
           key={`v-${i}`}
           points={[i * gridSize, 0, i * gridSize, height]}
-          stroke="#374151"
+          // stroke="#374151"
           // stroke="white"
           strokeWidth={0.5}
         />
@@ -39,7 +39,7 @@ export default function Canvas() {
         <Line
           key={`h-${j}`}
           points={[0, j * gridSize, width, j * gridSize]}
-          stroke="#374151"
+          // stroke="#374151"
           // stroke="white"
           strokeWidth={0.5}
         />

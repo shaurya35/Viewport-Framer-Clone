@@ -53,12 +53,12 @@ export default function Canvas() {
     return Math.round(value / gridSize) * gridSize;
   };
 
-  const handleChangeShapePosition = (e: KonvaEventObject<MouseEvent>) => {
-    setCoordinates({
-      x: snapToGrid(e.target.x()),
-      y: snapToGrid(e.target.y()),
-    });
-  };
+  // const handleChangeShapePosition = (e: KonvaEventObject<MouseEvent>) => {
+  //   setCoordinates({
+  //     x: snapToGrid(e.target.x()),
+  //     y: snapToGrid(e.target.y()),
+  //   });
+  // };
 
   useEffect(() => {
     const updateDimensions = () => {

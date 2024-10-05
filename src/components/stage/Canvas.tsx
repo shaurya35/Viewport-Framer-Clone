@@ -81,9 +81,9 @@ export default function Canvas() {
   const stageWidth = 1200;
   const stageHeight = 600;
 
-  const handleMouseDown = (e: KonvaEventObject<MouseEvent>) => {};
+  // const handleMouseDown = (e: KonvaEventObject<MouseEvent>) => {};
 
-  const handleMouseUp = (e: KonvaEventObject<MouseEvent>) => {};
+  // const handleMouseUp = (e: KonvaEventObject<MouseEvent>) => {};
 
   return (
     <>
